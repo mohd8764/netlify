@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+  <script>
+    
+    /** 
+      * Font Stacks 
+      */ 
+    const fonts = { 
+      primary: ` 
+        -apple-system, 
+        BlinkMacSystemFont, 
+        "Segoe UI", 
+        Roboto, 
+        Helvetica, 
+        Arial, 
+        sans-serif, 
+        "Apple Color Emoji", 
+        "Segoe UI Emoji", 
+        "Segoe UI Symbol" 
+      `, 
+      mono: ` 
+        'SFMono-Regular', 
+        Consolas, 
+        "Liberation Mono", 
+        Menlo, 
+        Courier, 
+        monospace; 
+      `, 
+    }; 
+      
+    /** 
+      * Theme Colors 
+      */ 
+    const colorsRaw = { 
+      white: '#fff', 
+      grayLight: '#eff0f4', 
+      gray: '#798291', 
+      grayDark: '#313d3e', 
+      blue: '#3a69c7', 
+      blueLight: '#e8f5fe', 
+      green: '#005614', 
+      greenLight: '#caef6f', 
+      brown: '#754e00', 
+      yellow: '#ffee9c', 
+      red: '#ff003b', 
+      redLight: '#fcefea', 
+      purple: '#70399f', 
+      purpleLight: '#f6d8ff', 
+      teal: '#17a2b8', 
+      tealLight: '#ddf5f9', 
+    }; 
+      
+    const colors = { 
+      statusDraftText: colorsRaw.purple, 
+      statusDraftBackground: colorsRaw.purpleLight, 
+      statusReviewText: colorsRaw.Brown, 
+      statusReviewBackground: colorsRaw.yellow, 
+      statusReadyText: colorsRaw.green, 
+      statusReadyBackground: colorsRaw.greenLight, 
+      text: colorsRaw.gray, 
+      textLight: colorsRaw.grayLight, 
+      textLead: colorsRaw.white, 
+      background: colorsRaw.grayLight, 
+      foreground: colorsRaw.grayDark, 
+      active: colorsRaw.blue, 
+      activeBackground: colorsRaw.blueLight, 
+      inactive: colorsRaw.gray, 
+      button: colorsRaw.gray, 
+      buttonText: colorsRaw.white, 
+      inputBackground: colorsRaw.white, 
+      infoText: colorsRaw.blue, 
+      infoBackground: colorsRaw.blueLight, 
+      successText: colorsRaw.green, 
+      successBackground: colorsRaw.greenLight, 
+      warnText: colorsRaw.brown, 
+      warnBackground: colorsRaw.yellow, 
+      errorText: colorsRaw.red, 
+      errorBackground: colorsRaw.redLight, 
+      textFieldBorder: '#dfdfe3', 
+      controlLabel: '#7a8291', 
+      checkerboardLight: '#f2f2f2', 
+      checkerboardDark: '#e6e6e6', 
+    }; 
+
+  </script>
+
+
+  <title>Content Manager</title>
+</head>
+<body>
+  <!-- Include the script that builds the page and powers Netlify CMS -->
+  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+---
+backend:
+  name: git-gateway
+  branch: master
+
+publish_mode: editorial_workflow
+media_folder: images/uploads
+
+site_url: https://nmc-ossu-bi-ncms.netlify.com
+
+collections:
+- name: pages
+  label: Pages
+  delete: false
+  editor:
+    preview: false
+  files:
+  - label: Course List
+    name: courselist
+    file: _data/courselist.yml
+    fields:
+    - label: Courses
+      label_singular: Course
+      name: courses
+      widget: list
+      fields:
+      - label: Course Name
+        name: name
+        widget: string
+      - label: Course URL
+        name: url
+        widget: string
+        required: false
+      - label: Course Group
+        name: group
+        widget: select
+        options:
+        - Project
+  - label: Course Group List
+    name: grouplist
+    file: _data/grouplist.yml
+    fields:
+    - label: Course Groups
+      label_singular: Course Group
+      name: coursegroups
+      widget: list
+      fields:
+      - label: Course Group Name
+        name: name
+        widget: string
+      - label: Source URL
+        name: url
+        widget: string
+        required: false
+  - label: Progress Board
+    name: progressboard
+    file: _data/trelloboard.yml
+    fields:
+    - label: board-url
+      name: board-url
+      widget: string
+- name: posts
+  label: Posts
+  label_singular: Post
+  folder: _posts
+  create: true
+  delete: false
+  slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+  fields:
+  - label: Layout
+    name: layout
+    widget: hidden
+    default: post
+  - label: Title
+    name: title
+    widget: string
+  - label: Publish Date
+    name: date
+    widget: datetime
+  - label: Featured Image
+    name: thumbnail
+    widget: image
+    required: false
+  - label: Course
+    name: course
+    widget: select
+    options:
+    - Project
+  - label: Body
+    name: body
+    widget: markdown

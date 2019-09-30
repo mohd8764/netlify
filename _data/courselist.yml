@@ -1,0 +1,6 @@
+courses:
+  - group: Project
+    name: Project
+  - group: Special Topics
+    name: 'Understanding the Brain: The Neurobiology of Everyday Life'
+    url: 'https://www.coursera.org/learn/neurobiology/home/welcome'

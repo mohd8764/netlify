@@ -1,0 +1,52 @@
+
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+
+# This line should *not* be indented
+publish_mode: editorial_workflow
+
+# This line should *not* be indented
+media_folder: "images/uploads" # Media files will be stored in the repo under images/uploads
+
+
+site_url: https://yoursite.com
+logo_url: https://yoursite.com/assets/img/logo.svg
+
+
+collections:
+
+  - label: "Pages"
+    name: "pages"
+    editor:
+      preview: true
+    files:
+      - label: "Course List"
+        name: "courselist"
+        file: "_data/courselist.yml"
+        editor:
+          preview: false
+        fields:
+          - label: "Courses"
+            label_singular: "Course"
+            name: "courses"
+            widget: list
+            fields:
+              - {label: Course Name, name: name, widget: string}
+              - {label: Course URL, name: url, widget: string}
+              - {label: Provider, name: provider, widget: string}
+
+
+  - name: "posts" # Used in routes, e.g., /admin/collections/blog
+    label: "Posts" # Used in the UI
+    label_singular: "Post"
+    folder: "_posts" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image", required: false}
+      - {label: "Course", name: "course", widget: "select", options: {{ site.data.courselist.courses | map: 'name' }} }
+      - {label: "Body", name: "body", widget: "markdown"}
