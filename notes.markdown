@@ -4,19 +4,21 @@ title: Notes
 permalink: /notes/
 ---
 
-
 <div>
 
   {% for group in site.data.grouplist.coursegroups %}
 
-    {% if group.name != Project %}
+    {% if group.name != "Project" %}
 
-      {% if group.url %}
+      {% if group.url and group.name%}
         <hr class="border border-muted mt-5">
         <h3> <a href="{{ group.url }}" target="_blank"> {{ group.name }} </a> </h3>
+      {% else if not group.url and group.name %}
+        <hr class="border border-muted mt-5">
+        <h3>{{ group.name }} </h3>
       {% endif %}
 
-  
+
       {% for course in site.data.courselist.courses %}
 
         {% if course.group != "Project" and course.group == group.name %}
@@ -31,7 +33,7 @@ permalink: /notes/
 
             <div class="card-body">
 
-              {% if course.url != blank %}
+              {% if course.url %}
               <p> <a href="{{ course.url }}" target="_blank"> Course Link </a> </p>
 
               <hr>
@@ -63,4 +65,4 @@ permalink: /notes/
 
   {% endfor %}
 
-<div>
+</div>
